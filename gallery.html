@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="CSS FILE.css">
+    <style>
+        body {
+            font-family: 'Palatino Linotype', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px 0;
+            font-weight: bold;
+        }
+
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            width: 150px;
+        }
+
+        .back-button:hover {
+            background-color: #555;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .category-button {
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            cursor: pointer;
+        }
+
+        .images-section {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .images-section h2 {
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+            gap: 15px; /* Space between images */
+            justify-items: center;
+        }
+
+        .image-container img {
+            width: 100%; /* Make images responsive within the grid cell */
+            max-width: 200px; /* Set maximum width for images */
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Fullscreen Overlay */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+    </header>
+
+    <a href="David Website.html" class="back-button">Back to Website</a>
+
+    <!-- December Section -->
+    <div class="images-section">
+        <h2>All Photos</h2>
+        <div class="image-container">
+            <img src="IUCampus51Dec24.jpg" alt="Simon Hall" class="vertical" data-description="Simon Hall on Indiana University's campus December 2024">
+            <img src="IUCampus52Dec24.jpg" alt="Outside Simon Hall" class="vertical" data-description="Outside Simon Hall on Indiana University's campus December 2024">
+            <img src="IUCampus53Dec24.jpg" alt="Kirkwood Hall" class="vertical" data-description="Kirkwood Hall on Indiana University's campus December 2024">
+            <img src="Animal6Dec24.jpg" alt="December Image" class="horizontal" data-description="Squirrel on Indiana University's campus December 2024">
+            <img src="IUCampus55Dec24.jpg" alt="December Image" class="horizontal" data-description="Biology Building on Indiana University's campus December 2024">
+            <img src="IUCampus58Dec24.jpg" alt="December Image" class="horizontal" data-description="Lindley Hall on Indiana University's campus December 2024">
+            <img src="Animal7Dec24.jpg" alt="December Image" class="vertical" data-description= "Squirrel on Indiana University's campus December 2024">
+            <img src="IUCampus54Dec24.jpg" alt="December Image" class="vertical" data-description= "Kirkwood Hall on Indiana University's campus December 2024">
+            <img src="IUCampus56Dec24.jpg" alt="December Image" class="vertical" data-description= "Lindley Hall on Indiana University's campus December 2024">
+            
+            <img src="IUCampus59Dec24.jpg" alt="December Image" class="horizontal" data-description= "Biology Building on Indiana University's campus December 2024">
+            <img src="IUCampus50Oct24.jpg" alt="October Image" class="horizontal" data-description= "Campus River on Indiana University's campus October 2024">
+            <img src="IUCampus38Oct24.jpg" alt="October Image" class="horizontal" data-description= "College Arts and Humanities Institute on Indiana University's campus October 2024">
+
+            <img src="IUCampus57Dec24.jpg" alt="December Image" class="vertical" data-description= "Christmas themed lamp post on Indiana University's campus December 2024">
+            <img src="iPhonePhoto8.jpg" alt="November Image" class="vertical" data-description= "Lincoln Park Chicago ZooLights event November 2024. Taken on iPhone">
+            <img src="IUCampus48Oct24.jpg" alt="October Image" class="vertical" data-description= "Campus River on Indiana University's campus October 2024">
+
+            <img src="IUCampus39Oct24.jpg" alt="October Image" class="horizontal" data-description= "Lamp post on Indiana University's campus October 2024">
+            <img src="IUCampus41Oct24.jpg" alt="October Image" class="horizontal" data-description= "A fall afternoon on Indiana University's campus October 2024">
+            <img src="IUCampus42Oct24.jpg" alt="October Image" class="horizontal" data-description= "A fall afternoon on Indiana University's campus October 2024">
+
+            <img src="IUCampus40Oct24.jpg" alt="October Image" class="vertical" data-description= "Lamp post on Indiana University's campus October 2024">
+            <img src="IUCampus43Oct24.jpg" alt="October Image" class="vertical" data-description= "Tree on Indiana University's campus October 2024">
+            <img src="IUCampus44Oct24.jpg" alt="October Image" class="vertical" data-description= "Tree on Indiana University's campus October 2024">
+
+            <img src="IUCampus46Oct24.jpg" alt="October Image" class="horizontal" data-description= "A fall afternoon on Indiana University's campus October 2024">
+            <img src="IUCampus47Oct24.jpg" alt="October Image" class="horizontal" data-description= "A fall afternoon on Indiana University's campus October 2024">
+            <img src="BrownCounty8July24.jpg" alt="July Image" class="horizontal" data-description= "Ogle Lake Brown County, Indiana July 2024. Taken on a Sony digital camera">
+
+            <img src="IUCampus45Oct24.jpg" alt="October Image" class="vertical" data-description= "Tree on Indiana University's campus October 2024">
+            <img src="IUCampus49Oct24.jpg" alt="October Image" class="vertical" data-description= "Tree on Indiana University's campus October 2024">
+            <img src="IUCampus31July24.jpg" alt="July Image" class="vertical" data-description= "Luddy Hall on Indiana University's campus July 2024">
+
+            <img src="BrownCounty9July24.jpg" alt="July Image" class="horizontal" data-description= "Ogle Lake Brown County, Indiana July 2024. Taken on a Sony digital camera">
+            <img src="BrownCounty10July24.jpg" alt="July Image" class="horizontal" data-description= "Ogle Lake Brown County, Indiana July 2024. Taken on a Sony digital camera">
+            <img src="BrownCounty11July24.jpg" alt="July Image" class="horizontal" data-description= "Indiana July 2024. Taken on a Sony digital camera">
+
+            <img src="IUCampus32July24.jpg" alt="July Image" class="vertical" data-description= "Luddy Hall on Indiana University's campus July 2024">
+            <img src="IUCampus33July24.jpg" alt="July Image" class="vertical" data-description= "Luddy Hall on Indiana University's campus July 2024">
+            <img src="IUCampus34July24.jpg" alt="July Image" class="vertical" data-description= "Luddy Hall on Indiana University's campus July 2024">
+
+            <img src="BrownCounty12July24.jpg" alt="July Image" class="horizontal" data-description= "Picnic bench and a view in Indiana July 2024. Taken on a Sony digital camera">
+            <img src="Animal5July24.jpg" alt="July Image" class="horizontal" data-description= "Squirrel by Ogle Lake Brown County National Park Indiana July 2024. Taken on a Sony digital camera">
+            <img src="IUCampus25June24.jpg" alt="June Image" class="horizontal" data-description= "IMU on Indiana University's campus June 2024">
+
+            <img src="IUCampus35July24.jpg" alt="July Image" class="vertical" data-description= "Luddy Hall on Indiana University's campus July 2024">
+            <img src="IUCampus36July24.jpg" alt="July Image" class="vertical" data-description= "Luddy Hall on Indiana University's campus July 2024">
+            <img src="IUCampus37July24.jpg" alt="July Image" class="vertical" data-description= "Luddy Hall on Indiana University's campus July 2024">
+
+            <img src="IUCampus30June24.jpg" alt="June Image" class="horizontal" data-description= "Sunflower on Indiana University's campus June 2024">
+            <img src="IUCampus2June24.jpg" alt="June Image" class="horizontal" data-description= "Indiana University's campus June 2024">
+            <img src="IUCampus3June24.jpg" alt="June Image" class="horizontal" data-description= "Indiana University's campus June 2024">
+
+            <img src="iPhonePhoto.jpg" alt="July Image" class="vertical" data-description= "Bloomington, Indiana July 2024. Taken on iPhone">
+            <img src="iPhonePhoto2.jpg" alt="July Image" class="vertical" data-description= "Bloomington, Indiana July 2024. Taken on iPhone">
+            <img src="iPhonePhoto3.jpg" alt="July Image" class="vertical" data-description= "Bloomington, Indiana July 2024. Taken on iPhone">
+
+            <img src="IUCampus4June24.jpg" alt="June Image" class="horizontal" data-description= "Tree on Indiana University's campus June 2024">
+            <img src="IUCampus8June24.jpg" alt="June Image" class="horizontal" data-description= "IMU on Indiana University's campus June 2024">
+            <img src="IUCampus10June24.jpg" alt="June Image" class="horizontal" data-description= "Showalter Fountain on Indiana University's campus June 2024">
+
+            <img src="iPhonePhoto4.jpg" alt="July Image" class="vertical" data-description= "Bloomington, Indiana July 2024. Taken on iPhone">
+            <img src="IUCampus24June24.jpg" alt="June Image" class="vertical" data-description= "Sunflowers surrounding a clock on Indiana University's campus June 2024">
+            <img src="IUCampus5June24.jpg" alt="June Image" class="vertical" data-description= "Wells Library on Indiana University's campus June 2024">
+
+            <img src="IUCampus11June24.jpg" alt="June Image" class="horizontal" data-description= "Showalter Fountain on Indiana University's campus June 2024">
+            <img src="IUCampus13June24.jpg" alt="June Image" class="horizontal" data-description= "Indiana University campus June 2024">
+            <img src="IUCampus14June24.jpg" alt="June Image" class="horizontal" data-description= "Wells Library on Indiana University's campus June 2024">
+
+            <img src="IUCampus6June24.jpg" alt="June Image" class="vertical" data-description= "IMU on Indiana University's campus June 2024">
+            <img src="IUCampus7June24.jpg" alt="June Image" class="vertical" data-description= "IMU on Indiana University's campus June 2024">
+            <img src="IUCampus9June24.jpg" alt="June Image" class="vertical" data-description= "IMU on Indiana University's campus June 2024">
+
+            <img src="IUCampus15June24.jpg" alt="June Image" class="horizontal" data-description= "Wells Library on Indiana University's campus June 2024">
+            <img src="IUCampus17June24.jpg" alt="June Image" class="horizontal" data-description= "Outside Wells Library on Indiana University's campus June 2024">
+            <img src="IUCampus18June24.jpg" alt="June Image" class="horizontal" data-description= "Indiana University's campus June 2024">
+
+            <img src="IUCampus12June24.jpg" alt="June Image" class="vertical" data-description= "Indiana University's campus June 2024">
+            <img src="IUCampus16June24.jpg" alt="June Image" class="vertical" data-description= "Wells Library on Indiana University's campus June 2024">
+            <img src="IUCampus20June24.jpg" alt="June Image" class="vertical" data-description= "Wells Library on Indiana University's campus June 2024">
+
+            <img src="Flower8June24.jpg" alt="June Image" class="vertical" data-description= "Ditch lilies on Indiana University's campus June 2024">
+            <img src="Flower14June24.jpg" alt="June Image" class="vertical" data-description= "Gladiolus on Indiana University's campus June 2024">
+            <img src="Flower16June24.jpg" alt="June Image" class="vertical" data-description= "Smooth hydrangea on Indiana University's campus June 2024">
+
+            <img src="IUCampus19June24.jpg" alt="June Image" class="horizontal" data-description= "Indiana University's campus June 2024">
+            <img src="IUCampus21June24.jpg" alt="June Image" class="horizontal" data-description= "Wells Library on Indiana University's campus June 2024">
+            <img src="IUCampus22June24.jpg" alt="June Image" class="horizontal" data-description= "Wells Library on Indiana University's campus June 2024">
+
+            <img src="IUCampus23June24.jpg" alt="June Image" class="horizontal" data-description= "Indiana University's campus June 2024">
+            <img src="Flower3June24.jpg" alt="June Image" class="horizontal" data-description= "Sunflower on Indiana University's campus June 2024">
+            <img src="Flower4June24.jpg" alt="June Image" class="horizontal" data-description= "Sunflower on Indiana University's campus June 2024">
+
+            <img src="Flower5June24.jpg" alt="June Image" class="horizontal" data-description= "Ditch lilies on Indiana University's campus June 2024">
+            <img src="Flower6June24.jpg" alt="June Image" class="horizontal" data-description= "Ditch lilies on Indiana University's campus June 2024">
+            <img src="Flower7June24.jpg" alt="June Image" class="horizontal" data-description= "Ditch lilies on Indiana University's campus June 2024">
+
+            <img src="Flower9June24.jpg" alt="June Image" class="horizontal" data-description= "Daylily on Indiana University's campus June 2024">
+            <img src="Flower10June24.jpg" alt="June Image" class="horizontal" data-description= "Ditch lily on Indiana University's campus June 2024">
+            <img src="Flower11June24.jpg" alt="June Image" class="horizontal" data-description= "Ditch lily on Indiana University's campus June 2024">
+
+            <img src="Flower12June24.jpg" alt="June Image" class="horizontal" data-description= "Obedient Plant on Indiana University's campus June 2024">
+            <img src="Flower13June24.jpg" alt="June Image" class="horizontal" data-description= "Gladiolus on Indiana University's campus June 2024">
+            <img src="Flower15June24.jpg" alt="June Image" class="horizontal" data-description= "Indiana University's campus June 2024">
+
+            <img src="Flower20June24.jpg" alt="June Image" class="vertical" data-description= "Black-eyed susan flower on Indiana University's campus June 2024">
+            <img src="Animal2June24.jpg" alt="June Image" class="vertical" data-description= "A bee on a black-eyed susan flower on Indiana University's campus June 2024">
+            <img src="iPhonePhoto5.jpg" alt="June Image" class="vertical" data-description= "The L train in Chicago July 2024">
+
+            <img src="iPhonePhoto6.jpg" alt="June Image" class="vertical" data-description= "Under the L train in Chicago July 2024. Taken on iPhone">
+            <img src="iPhonePhoto7.jpg" alt="June Image" class="vertical" data-description= "Wrigley Building in Chicago July 2024. Taken on iPhone">
+            <img src="BrownCountyMay24.jpg" alt="May Image" class="vertical" data-description= "The smokey hills of Brown County, Indiana May 2024">
+
+            <img src="Flower17June24.jpg" alt="June Image" class="horizontal" data-description= "Cock's comb on Indiana University's campus June 2024">
+            <img src="Flower18June24.jpg" alt="June Image" class="horizontal" data-description= "Black-eyed susan flower on Indiana University's campus June 2024">
+            <img src="Flower19June24.jpg" alt="June Image" class="horizontal" data-description= "Black-eyed susan flower on Indiana University's campus June 2024">
+
+            <img src="Flower21June24.jpg" alt="June Image" class="horizontal" data-description= "New guinea impatiens on Indiana University's campus June 2024">
+            <img src="AnimalJune24.jpg" alt="June Image" class="horizontal" data-description= "Squirrel on Indiana University's campus June 2024">
+            <img src="Animal3May24.jpg" alt="May Image" class="horizontal" data-description= "Ducks by Ogle Lake Brown County, Indiana May 2024">
+
+            <img src="Animal4May24.jpg" alt="May Image" class="horizontal" data-description= "Ducks swimming in Ogle Lake Brown County, Indiana May 2024">
+            <img src="Animal8May24.jpg" alt="May Image" class="horizontal" data-description= "Snake in Leonard Springs Nature Park Bloomington, Indiana May 2024">
+            <img src="BrownCounty6May24.jpg" alt="May Image" class="horizontal" data-description= "Ogle Lake in Brown County, Indiana May 2024">
+            
+            <img src="BrownCounty2May24.jpg" alt="May Image" class="vertical" data-description= "The foggy hills of Brown County State Park, Indiana May 2024">
+            <img src="BrownCounty3May24.jpg" alt="May Image" class="vertical" data-description= "The foggy hills of Brown County State Park, Indiana May 2024">
+            <img src="BrownCounty4May24.jpg" alt="May Image" class="vertical" data-description= "Ogle Lake in Brown County State Park, Indiana May 2024">
+
+            <img src="BrownCounty7May24.jpg" alt="May Image" class="horizontal" data-description= "Brown County State Park, Indiana May 2024">
+            <img src="LeonardSprings2May24.jpg" alt="May Image" class="horizontal" data-description= "Waterfall in Leonard Springs Nature Park Bloomington, Indiana May 2024">
+            <img src="LeonardSprings4May24.jpg" alt="May Image" class="horizontal" data-description= "Waterfall in Leonard Springs Nature Park Bloomington, Indiana May 2024">
+
+            <img src="LeonardSprings5May24.jpg" alt="May Image" class="horizontal" data-description= "Waterfall in Leonard Springs Nature Park Bloomington, Indiana May 2024">
+            <img src="LeonardSprings7May24.jpg" alt="May Image" class="horizontal" data-description= "Waterfall in Leonard Springs Nature Park Bloomington, Indiana May 2024">
+            <img src="LeonardSprings9May24.jpg" alt="May Image" class="horizontal" data-description= "Creek in Leonard Springs Nature Park Bloomington, Indiana May 2024">
+
+            <img src="BrownCounty5May24.jpg" alt="May Image" class="vertical" data-description= "Creek by Ogle Lake in Brown County State Park, Indiana May 2024">
+            <img src="LeonardSpringsMay24.jpg" alt="May Image" class="vertical" data-description= "Waterfall in Leonard Springs Nature Park Bloomington, Indiana May 2024">
+            <img src="LeonardSprings3May24.jpg" alt="May Image" class="vertical" data-description= "Waterfall in Leonard Springs Nature Park Bloomington, Indiana May 2024">
+
+            <img src="McCormicks1May24.jpg" alt="May Image" class="horizontal" data-description= "Waterfall in McCormick's Creek State Park, Indiana May 2024">
+            <img src="McCormicks2May24.jpg" alt="May Image" class="horizontal" data-description= "Waterfall in McCormick's Creek State Park, Indiana May 2024">
+            <img src="Flower1May24.jpg" alt="May Image" class="horizontal" data-description= "Hybrid tea rose flower on Indiana University's campus May 2024">
+
+            <img src="LeonardSprings6May24.jpg" alt="May Image" class="vertical" data-description= "Waterfall in Leonard Springs Nature Park Bloomington, Indiana May 2024">
+            <img src="Flower2May24.jpg" alt="May Image" class="vertical" data-description= "Hybrid tea rose flower on Indiana University's campus May 2024">
+        </div>
+    </div>
+
+    <!-- Lightbox Overlay -->
+    <div class="lightbox-overlay" id="lightbox-overlay">
+        <button class="lightbox-close" id="close-lightbox">X</button>
+        <img id="lightbox-image" class="lightbox-image" src="" alt="Full Image">
+    </div>
+
+    <footer>
+        <p>Gallery Footer Information</p>
+    </footer>
+
+    <script>
+        // Get all images and the lightbox elements
+        const images = document.querySelectorAll('.image-container img');
+        const lightboxOverlay = document.getElementById('lightbox-overlay');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeLightboxButton = document.getElementById('close-lightbox');
+    
+        // Event listener to open lightbox on image click
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                lightboxOverlay.classList.add('active');
+                lightboxImage.src = image.src; // Set the image in the lightbox
+            });
+    
+            // Create a wrapper for the image and caption
+            const wrapper = document.createElement('div');
+            wrapper.style.textAlign = "center";
+            wrapper.style.marginBottom = "15px";
+    
+            // Move the image into the wrapper
+            const parent = image.parentNode;
+            parent.replaceChild(wrapper, image);
+            wrapper.appendChild(image);
+    
+            // Add a caption below the image
+            const caption = document.createElement('p');
+            caption.textContent = image.getAttribute('data-description') || "No description available";
+            caption.style.fontSize = "14px";
+            caption.style.color = "#555";
+            caption.style.marginTop = "5px";
+    
+            wrapper.appendChild(caption);
+        });
+    
+        // Close lightbox when the close button is clicked
+        closeLightboxButton.addEventListener('click', () => {
+            lightboxOverlay.classList.remove('active');
+        });
+    
+        // Close lightbox when clicking outside the image
+        lightboxOverlay.addEventListener('click', (e) => {
+            if (e.target === lightboxOverlay) {
+                lightboxOverlay.classList.remove('active');
+            }
+        });
+    </script>
+    
+    
+</body>
+</html>

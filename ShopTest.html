@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="CSS FILE.css">
+    <style>
+        body {
+            font-family: 'Palatino Linotype', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .shop-container {
+            padding: 20px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .image-item {
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .image-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .image-item button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .image-item button:hover {
+            background-color: #555;
+        }
+
+        .cart {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .checkout-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .checkout-button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shop</h1>
+        <p style="text-align: center; font-size: 16px; color: #555; margin-top: 10px;">
+            Venmo payment only. Tax and shipping already accounted for in prices below.
+        </p>
+    </header>
+
+    <div class="shop-container">
+        <!-- Image Grid -->
+        <div class="image-grid">
+            <div class="image-item" data-id="1" data-name="Simon Hall" data-price="10">
+                <img src="IUCampus51Dec24.jpg" alt="Simon Hall">
+                <p>Simon Hall - $10</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="image-item" data-id="2" data-name="Kirkwood Hall" data-price="15">
+                <img src="IUCampus53Dec24.jpg" alt="Kirkwood Hall">
+                <p>Kirkwood Hall - $15</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="image-item" data-id="3" data-name="Squirrel" data-price="8">
+                <img src="Animal6Dec24.jpg" alt="Squirrel">
+                <p>Squirrel - $8</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more images similarly -->
+        </div>
+
+        <!-- Shopping Cart -->
+        <div class="cart">
+            <h2>Shopping Cart</h2>
+            <div class="cart-items"></div>
+            <button class="checkout-button">Checkout</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Shop Footer Information</p>
+    </footer>
+
+    <script>
+        const cartItemsContainer = document.querySelector('.cart-items');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const checkoutButton = document.querySelector('.checkout-button');
+    
+        const cart = [];
+    
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const imageItem = button.parentElement;
+                const id = imageItem.getAttribute('data-id');
+                const name = imageItem.getAttribute('data-name');
+                const price = parseFloat(imageItem.getAttribute('data-price'));
+    
+                // Add to cart
+                const cartItem = cart.find(item => item.id === id);
+                if (cartItem) {
+                    cartItem.quantity++;
+                } else {
+                    cart.push({ id, name, price, quantity: 1 });
+                }
+    
+                updateCart();
+            });
+        });
+    
+        function updateCart() {
+            cartItemsContainer.innerHTML = '';
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <span>${item.name} x ${item.quantity}</span>
+                    <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+        }
+    
+        checkoutButton.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+    
+            // Calculate total price
+            const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    
+            // Redirect to Venmo payment URL
+            const venmoUrl = `https://venmo.com/davidgourley70?txn=pay&amount=${totalPrice.toFixed(2)}&note=Photo+Purchase`;
+            window.open(venmoUrl, '_blank');
+        });
+    </script>
+    
+</body>
+</html>

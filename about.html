@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - David Gourley Photography</title>
+    <link rel="stylesheet" href="CSS FILE.css">
+    <style>
+        body {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #2b2b2b, #333);
+        }
+        header, footer {
+            background-color: #333; /* Dark grey */
+            color: white; /* White text for contrast */
+            text-align: center;
+            padding: 20px;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-image: url('IUCampus30June24.jpg'); /* New background image */
+            background-size: cover;
+            background-position: center;
+        }
+        .about-container {
+            position: relative;
+            max-width: 600px;
+            padding: 30px;
+            background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent background */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 2; /* Ensures it stays on top of the image */
+            color: white;
+            text-align: center;
+        }
+        .about-item {
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        a {
+            color: #3498db; /* Blue text */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #2980b9; /* Darker blue on hover */
+            text-decoration: underline;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #f39c12;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background-color: #e67e22;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #555;
+            color: white;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #666;
+        }
+
+        .about-photo {
+            width: 220px; /* Slightly bigger width */
+            height: 220px; /* Slightly bigger height */
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top; /* Moves image focus upwards to show more hair */
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+    </header>
+    <main>
+        <!-- About container -->
+        <div class="about-container">
+            <img src="DavidPhoto.jpg" alt="David Gourley" class="about-photo"> <!-- Your updated photo -->
+            <p class="about-item">
+                Aside from photography, one of my main passions lies in becoming a Data Scientist or Data Analyst. Currently, I am pursuing a Bachelor’s degree in Data Science at the Luddy School of Informatics, Computing, and Engineering at Indiana University. Creating this website was a personal project of mine that helped further advance my skill in coding and web design! I have a profound interest for sports statistics, more specifically basketball, where I aim to analyze game data and player performance to gain deeper insights into the sport's trends and strategies. In my freshmen year of college, I took a photography class as an elective and purchased a Canon EOS Rebel T7 that truly advanced my interest in it. I'd always enjoy taking unique photos with iPhone's, but I felt buying this would help progress my skills, while still being welcoming to beginners. And now, with the creation of this website, I'm able to share to the public two interests of mine: coding/web design and photography!
+            </p>
+            <a href="David Website.html" class="back-button">Back to Website</a> <!-- Back button -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 David Gourley Photography. All rights reserved.</p>
+    </footer>
+</body>
+</html>
