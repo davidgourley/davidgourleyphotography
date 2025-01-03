@@ -1,4 +1,4 @@
-/* External CSS File */
+/* CSS File */
 
 body {
     font-family: Optima, sans-serif;
@@ -17,7 +17,7 @@ header {
 nav ul {
     list-style-type: none;
     padding: 0;
-    text-align: center; /* Center navigation items by default */
+    text-align: center; 
 }
 
 nav ul li {
@@ -44,7 +44,6 @@ footer {
     color: white;
 }
 
-/* Gallery-specific styles */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -73,24 +72,21 @@ footer {
 
 .gallery .image img.vertical {
     width: auto;
-    max-height: 400px; /* Adjust the height for vertical images */
+    max-height: 400px; 
 }
 
-/* Full-screen image on click */
 .gallery .image img:active, .gallery .image img:focus {
     transform: scale(1.2);
 }
 
-/* Mobile responsiveness for the gallery */
 @media (max-width: 768px) {
     .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
     }
 }
 
-/* For very small screens */
 @media (max-width: 480px) {
     .gallery {
-        grid-template-columns: 1fr; /* Single column on small screens */
+        grid-template-columns: 1fr;
     }
 }
