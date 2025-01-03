@@ -81,14 +81,14 @@
 
         .image-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 images per row */
-            gap: 15px; /* Space between images */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
             justify-items: center;
         }
 
         .image-container img {
-            width: 100%; /* Make images responsive within the grid cell */
-            max-width: 200px; /* Set maximum width for images */
+            width: 100%; 
+            max-width: 200px;
             height: auto;
             border-radius: 10px;
             cursor: pointer;
@@ -99,7 +99,6 @@
             transform: scale(1.05);
         }
 
-        /* Fullscreen Overlay */
         .lightbox-overlay {
             display: none;
             position: fixed;
@@ -147,7 +146,6 @@
 
     <a href="David Website.html" class="back-button">Back to Website</a>
 
-    <!-- December Section -->
     <div class="images-section">
         <h2>All Photos</h2>
         <div class="image-container">
@@ -302,7 +300,6 @@
         </div>
     </div>
 
-    <!-- Lightbox Overlay -->
     <div class="lightbox-overlay" id="lightbox-overlay">
         <button class="lightbox-close" id="close-lightbox">X</button>
         <img id="lightbox-image" class="lightbox-image" src="" alt="Full Image">
@@ -313,30 +310,25 @@
     </footer>
 
     <script>
-        // Get all images and the lightbox elements
         const images = document.querySelectorAll('.image-container img');
         const lightboxOverlay = document.getElementById('lightbox-overlay');
         const lightboxImage = document.getElementById('lightbox-image');
         const closeLightboxButton = document.getElementById('close-lightbox');
     
-        // Event listener to open lightbox on image click
         images.forEach(image => {
             image.addEventListener('click', () => {
                 lightboxOverlay.classList.add('active');
-                lightboxImage.src = image.src; // Set the image in the lightbox
+                lightboxImage.src = image.src;
             });
     
-            // Create a wrapper for the image and caption
             const wrapper = document.createElement('div');
             wrapper.style.textAlign = "center";
             wrapper.style.marginBottom = "15px";
     
-            // Move the image into the wrapper
             const parent = image.parentNode;
             parent.replaceChild(wrapper, image);
             wrapper.appendChild(image);
     
-            // Add a caption below the image
             const caption = document.createElement('p');
             caption.textContent = image.getAttribute('data-description') || "No description available";
             caption.style.fontSize = "14px";
@@ -346,12 +338,10 @@
             wrapper.appendChild(caption);
         });
     
-        // Close lightbox when the close button is clicked
         closeLightboxButton.addEventListener('click', () => {
             lightboxOverlay.classList.remove('active');
         });
     
-        // Close lightbox when clicking outside the image
         lightboxOverlay.addEventListener('click', (e) => {
             if (e.target === lightboxOverlay) {
                 lightboxOverlay.classList.remove('active');
