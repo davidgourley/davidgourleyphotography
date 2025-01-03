@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David's Photography Website</title>
+    <link rel="stylesheet" href="CSS FILE.css">
+    <style>
+        /* General styling */
+        body {
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Image gallery styling */
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .image-gallery img {
+            width: 30%; /* Ensure all images are resized to fit on the same row */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Disclaimer text */
+        .disclaimer {
+            text-align: center;
+            margin: 20px auto;
+            font-size: 16px;
+            color: #555;
+            max-width: 600px;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>David Gourley Photography</h1>
+        <nav>
+            <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Image Gallery Section -->
+    <div class="image-gallery">
+        <img src="BrownCounty2May24.jpg" alt="The foggy hills of Brown County State Park, Indiana May 2024">
+        <img src="IUCampus24June24.jpg" alt="Sunflowers surrounding a clock on Indiana University's campus June 2024">
+        <img src="IUCampus48Oct24.jpg" alt="Campus River on Indiana University's campus October 2024">
+    </div>
+
+    <!-- Disclaimer Section -->
+    <div class="disclaimer">
+        <p>Please do not use/post my photos without prior permission. And if you are interested in purchasing a print/canvas of any of my photos, my contact information is above in the "Contact" section - just reach out to me. Thank you!</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 David Gourley Photography. All rights reserved.</p>
+    </footer>
+</body>
+</html>
