@@ -81,14 +81,14 @@
 
         .image-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+            gap: 15px; /* Space between images */
             justify-items: center;
         }
 
         .image-container img {
-            width: 100%; 
-            max-width: 200px;
+            width: 100%; /* Make images responsive within the grid cell */
+            max-width: 200px; /* Set maximum width for images */
             height: auto;
             border-radius: 10px;
             cursor: pointer;
@@ -99,6 +99,7 @@
             transform: scale(1.05);
         }
 
+        /* Fullscreen Overlay */
         .lightbox-overlay {
             display: none;
             position: fixed;
@@ -146,9 +147,54 @@
 
     <a href="David Website.html" class="back-button">Back to Website</a>
 
+    <!-- December Section -->
     <div class="images-section">
         <h2>All Photos</h2>
         <div class="image-container">
+            <img src="Winter30.jpg" alt="Library" class="horizontal" data-description="Wells Library on Indiana University's campus January 2025">
+            <img src="Winter29.jpg" alt="Library" class="horizontal" data-description="Wells Library on Indiana University's campus January 2025">
+            <img src="Winter28.jpg" alt="Pond" class="horizontal" data-description="Cox Arboretum on Indiana University's campus January 2025">
+
+            <img src="Winter26.jpg" alt="IMU" class="vertical" data-description="IMU on Indiana University's campus January 2025">
+            <img src="Winter25.jpg" alt="Sample Gates" class="vertical" data-description="Sample Gates - Indiana University's campus January 2025">
+            <img src="Winter19.jpg" alt="Student Building" class="vertical" data-description="Student Building on Indiana University's campus January 2025">
+
+            <img src="Winter27.jpg" alt="Campus" class="horizontal" data-description="Indiana University's campus January 2025">
+            <img src="Winter20.jpg" alt="Student Building" class="horizontal" data-description="Student Building on Indiana University's campus January 2025">
+            <img src="Winter24.jpg" alt="Sample Gates" class="horizontal" data-description="Sample Gates - Indiana University's campus January 2025">
+
+            <img src="Winter23.jpg" alt="Sample Gates" class="horizontal" data-description="Sample Gates - Indiana University's campus January 2025">
+            <img src="Winter22.jpg" alt="Sample Gates" class="horizontal" data-description="Sample Gates - Indiana University's campus January 2025">
+            <img src="Winter21.jpg" alt="Sample Gates" class="horizontal" data-description="Sample Gates - Indiana University's campus January 2025">
+
+            <img src="Winter16.jpg" alt="Creek" class="vertical" data-description="Creek on Indiana University's campus January 2025">
+            <img src="Winter13.jpg" alt="Creek" class="vertical" data-description="Creek on Indiana University's campus January 2025">
+            <img src="Winter12.jpg" alt="Creek" class="vertical" data-description="Creek on Indiana University's campus January 2025">
+
+            <img src="Winter18.jpg" alt="Campus" class="horizontal" data-description="Beck Chapel on Indiana University's campus January 2025">
+            <img src="Winter15.jpg" alt="Campus" class="horizontal" data-description="Indiana University's campus January 2025">
+            <img src="Winter14.jpg" alt="Campus" class="horizontal" data-description="Indiana University's campus January 2025">
+
+            <img src="Winter11.jpg" alt="Campus" class="horizontal" data-description="Showalter Fountain & the Auditorium on Indiana University's campus January 2025">
+            <img src="Winter10.jpg" alt="Campus" class="horizontal" data-description="Venus, the Roman goddess of love, beauty, and fertility - Showalter Fountain - on Indiana University's campus January 2025">
+            <img src="Winter9.jpg" alt="Lilly Library" class="horizontal" data-description="Lilly Library on Indiana University's campus January 2025">
+
+            <img src="Winter8.jpg" alt="Creek" class="vertical" data-description="Creek on Indiana University's campus January 2025">
+            <img src="Winter5.jpg" alt="Creek" class="vertical" data-description="Creek on Indiana University's campus January 2025">
+            <img src="Winter4.jpg" alt="Creek" class="vertical" data-description="Creek on Indiana University's campus January 2025">
+
+            <img src="Winter7.jpg" alt="Campus" class="horizontal" data-description="Lamp post on Indiana University's campus January 2025">
+            <img src="Winter6.jpg" alt="Campus" class="horizontal" data-description="Creek on Indiana University's campus January 2025">
+            <img src="Winter3.jpg" alt="Campus" class="horizontal" data-description="Indiana University's campus January 2025">
+
+            <img src="iPhone2.jpg" alt="First United Methodist Church" class="vertical" data-description="First United Methodist Church in Bloomington January 2025">
+            <img src="iPhone1.jpg" alt="4th Street Bloomington" class="vertical" data-description="Sunset on 4th Street in Bloomington January 2025">
+            <img src="Winter1.jpg" alt="Trees" class="vertical" data-description="Trees on Indiana University's campus January 2025">
+
+            <img src="Winter2.jpg" alt="Creek" class="horizontal" data-description="Snowy creek on Indiana University's campus January 2025">
+            <img src="Henry2.jpg" alt="Henry" class="horizontal" data-description="Henry outside in the snow January 2025">
+            <img src="Henry1.jpg" alt="Henry" class="horizontal" data-description="Henry outside in the snow January 2025">
+
             <img src="IUCampus51Dec24.jpg" alt="Simon Hall" class="vertical" data-description="Simon Hall on Indiana University's campus December 2024">
             <img src="IUCampus52Dec24.jpg" alt="Outside Simon Hall" class="vertical" data-description="Outside Simon Hall on Indiana University's campus December 2024">
             <img src="IUCampus53Dec24.jpg" alt="Kirkwood Hall" class="vertical" data-description="Kirkwood Hall on Indiana University's campus December 2024">
@@ -300,6 +346,7 @@
         </div>
     </div>
 
+    <!-- Lightbox Overlay -->
     <div class="lightbox-overlay" id="lightbox-overlay">
         <button class="lightbox-close" id="close-lightbox">X</button>
         <img id="lightbox-image" class="lightbox-image" src="" alt="Full Image">
@@ -310,25 +357,30 @@
     </footer>
 
     <script>
+        // Get all images and the lightbox elements
         const images = document.querySelectorAll('.image-container img');
         const lightboxOverlay = document.getElementById('lightbox-overlay');
         const lightboxImage = document.getElementById('lightbox-image');
         const closeLightboxButton = document.getElementById('close-lightbox');
     
+        // Event listener to open lightbox on image click
         images.forEach(image => {
             image.addEventListener('click', () => {
                 lightboxOverlay.classList.add('active');
-                lightboxImage.src = image.src;
+                lightboxImage.src = image.src; // Set the image in the lightbox
             });
     
+            // Create a wrapper for the image and caption
             const wrapper = document.createElement('div');
             wrapper.style.textAlign = "center";
             wrapper.style.marginBottom = "15px";
     
+            // Move the image into the wrapper
             const parent = image.parentNode;
             parent.replaceChild(wrapper, image);
             wrapper.appendChild(image);
     
+            // Add a caption below the image
             const caption = document.createElement('p');
             caption.textContent = image.getAttribute('data-description') || "No description available";
             caption.style.fontSize = "14px";
@@ -338,10 +390,12 @@
             wrapper.appendChild(caption);
         });
     
+        // Close lightbox when the close button is clicked
         closeLightboxButton.addEventListener('click', () => {
             lightboxOverlay.classList.remove('active');
         });
     
+        // Close lightbox when clicking outside the image
         lightboxOverlay.addEventListener('click', (e) => {
             if (e.target === lightboxOverlay) {
                 lightboxOverlay.classList.remove('active');
