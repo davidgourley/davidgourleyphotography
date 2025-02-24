@@ -1,0 +1,332 @@
+#favorites html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="CSS FILE.css">
+    <style>
+        body {
+            font-family: 'Palatino Linotype', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px 0;
+            font-weight: bold;
+        }
+
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            width: 150px;
+        }
+
+        .back-button:hover {
+            background-color: #555;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .category-button {
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            cursor: pointer;
+        }
+
+        .images-section {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .images-section h2 {
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+            gap: 15px; /* Space between images */
+            justify-items: center;
+        }
+
+        .image-container img {
+            width: 100%; /* Make images responsive within the grid cell */
+            max-width: 200px; /* Set maximum width for images */
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Fullscreen Overlay */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+    </header>
+
+    <a href="David Website.html" class="back-button">Back to Website</a>
+
+    <!-- December Section -->
+    <div class="images-section">
+        <h2>All Photos</h2>
+        <div class="image-container">
+            <img src="art9.jpeg" alt="diana" class="vertical" data-description="artist in her studio | february 2025">
+            <img src="art8.jpeg" alt="diana" class="vertical" data-description="artist in her studio | february 2025">
+
+            <img src="art5.jpeg" alt="diana" class="vertical" data-description="artist in her studio | february 2025">
+            <img src="art4.jpeg" alt="diana" class="vertical" data-description="artist in her studio | february 2025">
+
+            <img src="diana1.jpeg" alt="diana" class="vertical" data-description="pink reverie | february 2025">
+            <img src="mist3.jpeg" alt="mist" class="vertical" data-description="brown county overlook | brown county, in feb 2025">
+            <img src="diana2.jpeg" alt="diana" class="vertical" data-description="crimson reverie | feb 2025">
+
+            <img src="diana3.jpeg" alt="lake" class="vertical" data-description="silent reverie II | february 2025">
+            <img src="bench1.jpeg" alt="lake" class="vertical" data-description="lake ogle | brown county, in feb 2025">
+            <img src="diana4.jpeg" alt="lake" class="vertical" data-description="silent reverie I | february 2025">
+            
+            <img src="closeup1.jpeg" alt="lake" class="vertical" data-description="rain droplet | brown county, in feb 2025">
+            <img src="mist1.jpeg" alt="lake" class="vertical" data-description="brown county outlook | brown county, in feb 2025">
+            <img src="closeup2.jpeg" alt="lake" class="vertical" data-description="rain droplet | brown county, in feb 2025">
+
+
+          
+            <img src="woods1.jpeg" alt="woods" class="vertical" data-description="the woods | brown county, in feb 2025">
+            
+            <img src="nikon3.jpeg" alt="nikon" class="horizontal" data-description="sample gates and kirkwood | indiana u feb 2025">
+            <img src="nikon4.jpeg" alt="nikon" class="horizontal" data-description="franklin hall | indiana u feb 2025">
+        
+
+
+          
+            <img src="sony5.jpeg" alt="sony" class="horizontal" data-description="stairs | indiana u feb 2025">
+            <img src="sony2.jpeg" alt="sony" class="horizontal" data-description="stairs | indiana u feb 2025">
+
+          
+            <img src="nikon1.jpeg" alt="nikon" class="horizontal" data-description="student building | indiana u feb 2025">
+            <img src="sony4.jpeg" alt="sony" class="horizontal" data-description="student building | indiana u feb 2025">
+            
+            <img src="noir14.jpeg" alt="sony" class="horizontal" data-description="student building | indiana u feb 2025">
+
+            <img src="noir12.jpeg" alt="sony" class="horizontal" data-description="stairs | indiana u feb 2025">
+            <img src="noir11.jpeg" alt="sony" class="horizontal" data-description="stairs | indiana u feb 2025">
+
+            
+            <img src="noir8.jpg" alt="Noir Collection" class="horizontal" data-description="noir 8 | indiana u jan 2025">
+            <img src="noir7.jpg" alt="Noir Collection" class="horizontal" data-description="noir 7 | indiana u jan 2025">
+            
+            <img src="noir5.jpg" alt="Noir Collection" class="horizontal" data-description="noir 4 | indiana u jan 2025">
+
+            <img src="noir2.jpg" alt="Noir Collection" class="horizontal" data-description="noir 1 | indiana u jan 2025">
+
+            <img src="Winter26.jpg" alt="IMU" class="vertical" data-description="IMU on Indiana University's campus January 2025">
+            <img src="Winter25.jpg" alt="Sample Gates" class="vertical" data-description="Sample Gates - Indiana University's campus January 2025">
+            <img src="Winter19.jpg" alt="Student Building" class="vertical" data-description="Student Building on Indiana University's campus January 2025">
+
+            <img src="Winter20.jpg" alt="Student Building" class="horizontal" data-description="Student Building on Indiana University's campus January 2025">
+            <img src="Winter24.jpg" alt="Sample Gates" class="horizontal" data-description="Sample Gates - Indiana University's campus January 2025">
+
+            <img src="Winter23.jpg" alt="Sample Gates" class="horizontal" data-description="Sample Gates - Indiana University's campus January 2025">
+            <img src="Winter22.jpg" alt="Sample Gates" class="horizontal" data-description="Sample Gates - Indiana University's campus January 2025">
+
+
+            <img src="Winter18.jpg" alt="Campus" class="horizontal" data-description="Beck Chapel on Indiana University's campus January 2025">
+
+
+            <img src="Winter11.jpg" alt="Campus" class="horizontal" data-description="Showalter Fountain & the Auditorium on Indiana University's campus January 2025">
+            <img src="Winter10.jpg" alt="Campus" class="horizontal" data-description="Venus, the Roman goddess of love, beauty, and fertility - Showalter Fountain - on Indiana University's campus January 2025">
+            <img src="Winter9.jpg" alt="Lilly Library" class="horizontal" data-description="Lilly Library on Indiana University's campus January 2025">
+
+
+            <img src="IUCampus51Dec24.jpg" alt="Simon Hall" class="vertical" data-description="Simon Hall on Indiana University's campus December 2024">
+            <img src="IUCampus53Dec24.jpg" alt="Kirkwood Hall" class="vertical" data-description="Kirkwood Hall on Indiana University's campus December 2024">
+            
+            <img src="IUCampus59Dec24.jpg" alt="December Image" class="horizontal" data-description= "Biology Building on Indiana University's campus December 2024">
+
+            <img src="IUCampus50Oct24.jpg" alt="October Image" class="horizontal" data-description= "Campus River on Indiana University's campus October 2024">
+            <img src="IUCampus38Oct24.jpg" alt="October Image" class="horizontal" data-description= "College Arts and Humanities Institute on Indiana University's campus October 2024">
+
+
+            <img src="IUCampus48Oct24.jpg" alt="October Image" class="vertical" data-description= "Campus River on Indiana University's campus October 2024">
+
+            <img src="IUCampus41Oct24.jpg" alt="October Image" class="horizontal" data-description= "A fall afternoon on Indiana University's campus October 2024">
+
+  
+
+
+
+            <img src="IUCampus25June24.jpg" alt="June Image" class="horizontal" data-description= "IMU on Indiana University's campus June 2024">
+
+            <img src="IUCampus35July24.jpg" alt="July Image" class="vertical" data-description= "Luddy Hall on Indiana University's campus July 2024">
+            <img src="IUCampus36July24.jpg" alt="July Image" class="vertical" data-description= "Luddy Hall on Indiana University's campus July 2024">
+
+            <img src="IUCampus30June24.jpg" alt="June Image" class="horizontal" data-description= "Sunflower on Indiana University's campus June 2024">
+
+
+
+          
+            <img src="IUCampus24June24.jpg" alt="June Image" class="vertical" data-description= "Sunflowers surrounding a clock on Indiana University's campus June 2024">
+
+          
+            <img src="Flower3June24.jpg" alt="June Image" class="horizontal" data-description= "Sunflower on Indiana University's campus June 2024">
+
+            <img src="Flower6June24.jpg" alt="June Image" class="horizontal" data-description= "Ditch lilies on Indiana University's campus June 2024">
+
+            <img src="Flower9June24.jpg" alt="June Image" class="horizontal" data-description= "Daylily on Indiana University's campus June 2024">
+            <img src="Flower10June24.jpg" alt="June Image" class="horizontal" data-description= "Ditch lily on Indiana University's campus June 2024">
+            <img src="Flower11June24.jpg" alt="June Image" class="horizontal" data-description= "Ditch lily on Indiana University's campus June 2024">
+
+            <img src="Flower12June24.jpg" alt="June Image" class="horizontal" data-description= "Obedient Plant on Indiana University's campus June 2024">
+
+
+            <img src="Flower20June24.jpg" alt="June Image" class="vertical" data-description= "Black-eyed susan flower on Indiana University's campus June 2024">
+     
+            <img src="Flower18June24.jpg" alt="June Image" class="horizontal" data-description= "Black-eyed susan flower on Indiana University's campus June 2024">
+            <img src="Flower19June24.jpg" alt="June Image" class="horizontal" data-description= "Black-eyed susan flower on Indiana University's campus June 2024">
+            
+            <img src="BrownCounty2May24.jpg" alt="May Image" class="vertical" data-description= "The foggy hills of Brown County State Park, Indiana May 2024">
+            
+    </div>
+
+    <!-- Lightbox Overlay -->
+    <div class="lightbox-overlay" id="lightbox-overlay">
+        <button class="lightbox-close" id="close-lightbox">X</button>
+        <img id="lightbox-image" class="lightbox-image" src="" alt="Full Image">
+    </div>
+
+    <footer>
+        <p>2025 David Gourley Photography. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get all images and the lightbox elements
+        const images = document.querySelectorAll('.image-container img');
+        const lightboxOverlay = document.getElementById('lightbox-overlay');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeLightboxButton = document.getElementById('close-lightbox');
+    
+        // Event listener to open lightbox on image click
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                lightboxOverlay.classList.add('active');
+                lightboxImage.src = image.src; // Set the image in the lightbox
+            });
+    
+            // Create a wrapper for the image and caption
+            const wrapper = document.createElement('div');
+            wrapper.style.textAlign = "center";
+            wrapper.style.marginBottom = "15px";
+    
+            // Move the image into the wrapper
+            const parent = image.parentNode;
+            parent.replaceChild(wrapper, image);
+            wrapper.appendChild(image);
+    
+            // Add a caption below the image
+            const caption = document.createElement('p');
+            caption.textContent = image.getAttribute('data-description') || "No description available";
+            caption.style.fontSize = "14px";
+            caption.style.color = "#555";
+            caption.style.marginTop = "5px";
+    
+            wrapper.appendChild(caption);
+        });
+    
+        // Close lightbox when the close button is clicked
+        closeLightboxButton.addEventListener('click', () => {
+            lightboxOverlay.classList.remove('active');
+        });
+    
+        // Close lightbox when clicking outside the image
+        lightboxOverlay.addEventListener('click', (e) => {
+            if (e.target === lightboxOverlay) {
+                lightboxOverlay.classList.remove('active');
+            }
+        });
+    </script>
+    
+    
+</body>
+</html>
